@@ -1,7 +1,7 @@
 
 
 const WebSocket = require("ws");
-const wss = new WebSocket.Server({ port: 8082 });
+const wss = new WebSocket.Server({ port: 'https://websoket2.onrender.com' });
 wss.on("connection", ws => {
 console.log("New client connected!");
 ws.on("close", () => {
