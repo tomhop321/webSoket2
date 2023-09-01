@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <script>
+<html>
 
+<script>
+    let ws = new WebSocket('wss://websoket2.onrender.com');
+    //logging the websocket property properties
+    console.log(ws);
+    //sending a message when connection opens
+    ws.onopen = (event) => ws.send("This is a message from client");
+    //receiving the message from server
+    ws.onmessage = (message) => console.log(message.data);//odbieranie wiadomościte
 
+    // ws.send("2") wysyła za pomocą ws wiadomość
+</script>
 
-      const ws = new WebSocket("ws://localhost:8082");
-      ws.addEventListener("open", () => { console.log("We are connected!");
-    });
+<body>
+    <h1>This is a client page</h1>
+</body>
 
-    </script>
-  </body>
 </html>
